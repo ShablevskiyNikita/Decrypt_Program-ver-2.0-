@@ -48,7 +48,6 @@ namespace Decrypt
                     MessageBox.Show("Invalid input format ");
                     return;
                 }
-                //string s = "";
                 List<string> input = new List<string>();
 
                 StreamReader sr = new StreamReader(fileName, Encoding.Default);
