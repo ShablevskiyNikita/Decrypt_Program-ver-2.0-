@@ -50,12 +50,12 @@ namespace Decrypt
                 }
                 List<string> input = new List<string>();
 
-                StreamReader sr = new StreamReader(fileName, Encoding.Default);
-                while (!sr.EndOfStream)
+                StreamReader reader = new StreamReader(fileName, Encoding.Default);
+                while (!reader.EndOfStream)
                 {
-                    input.Add(sr.ReadLine());
+                    input.Add(reader.ReadLine());
                 }
-                sr.Close();
+                reader.Close();
 
                 string result = RSA_Dedoce(input, d, n);
 
@@ -69,9 +69,9 @@ namespace Decrypt
                 }
 
 
-                StreamWriter sw = new StreamWriter(saveName);
-                sw.WriteLine(result);
-                sw.Close();
+                StreamWriter writer = new StreamWriter(saveName);
+                writer.WriteLine(result);
+                writer.Close();
                 MessageBox.Show("Your data was decrypted");
             }
             else
